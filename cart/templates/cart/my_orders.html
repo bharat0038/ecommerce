@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Orders</title>
+</head>
+<body>
+
+<h2>My Orders</h2>
+
+{% if orders %}
+    {% for order in orders %}
+        <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
+            <p><strong>Order ID:</strong> {{ order.id }}</p>
+            <p><strong>Total:</strong> ₹{{ order.total_amount }}</p>
+
+            <p>
+                <strong>Status:</strong>
+                <span style="color:
+                {% if order.status == 'pending' %}orange
+                {% elif order.status == 'shipped' %}blue
+                {% elif order.status == 'delivered' %}green
+                {% else %}black{% endif %}">
+                    {{ order.status|title }}
+                </span>
+            </p>
+
+            <p><strong>Ordered At:</strong> {{ order.created_at }}</p>
+
+            <!-- PRODUCT LIST -->
+            <h4>Products:</h4>
+            {% if order.items.all %}
+                <ul>
+                    {% for item in order.items.all %}
+                        <li>
+                            {{ item.product.name }} - Quantity: {{ item.quantity }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No products found for this order.</p>
+            {% endif %}
+
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No orders found.</p>
+{% endif %}
+
+<a href="{% url 'home' %}">⬅ Continue Shopping</a>
+
+</body>
+</html>

@@ -1,0 +1,13 @@
+<h2>Order Placed Successfully 🎉</h2>
+
+<p>Total Paid: ₹{{ total }}</p>
+
+<a href="{% url 'order_history' %}">View Orders</a>
+<a href="{% url 'razorpay_checkout' %}" class="btn btn-primary">
+    Pay Online (Razorpay)
+</a>
+
+<a href="{% url 'checkout' %}" class="btn btn-secondary">
+    Cash on Delivery
+</a>
+

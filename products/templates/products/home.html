@@ -1,0 +1,15 @@
+<h2>Products</h2>
+
+{% for p in products %}
+  <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+    <h3>{{ p.name }}</h3>
+    <p>Price: ₹{{ p.price }}</p>
+
+    <!-- Button to go to detail page -->
+    <a href="{% url 'product_detail' p.id %}">
+      <button style="padding:10px 20px; cursor:pointer;">
+        Select this product
+      </button>
+    </a>
+  </div>
+{% endfor %}
