@@ -92,6 +92,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+RAZORPAY_KEY_ID = "rzp_test_S66UTQJZYUqGOG"
+RAZORPAY_KEY_SECRET = "jy34ZMW3dPOx8edd7H85buQI"
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
