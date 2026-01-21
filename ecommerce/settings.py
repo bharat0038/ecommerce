@@ -6,7 +6,7 @@ SECRET_KEY = 'django-insecure-temp-key'
 
 DEBUG = True
 
-ALLOWED_HOSTS = [ALLOWED_HOSTS = ['ecommerce-1-74cj.onrender.com']]
+ALLOWED_HOSTS =  ['ecommerce-1-74cj.onrender.com']
 
 
 INSTALLED_APPS = [
