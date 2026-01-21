@@ -3,3 +3,4 @@ gunicorn
 razorpay
 requests
 beautifulsoup4
+Pillow>=10.0.0
